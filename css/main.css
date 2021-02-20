@@ -82,6 +82,15 @@ main{
         padding-left: 5vw;
     }
 }
+/* Landed */
+#landed{
+    width: 100%;
+    text-align: center;
+
+    font-size: 2rem;
+    font-family: 'Playfair Display',sans-serif;
+    font-weight: 600;
+}
 /* countdown starts */
 .countdown{
     margin-top: 20px;

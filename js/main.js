@@ -15,12 +15,17 @@ var x = setInterval(function() {
     hoursLeft.innerHTML = hours.toString();
     minsLeft.innerHTML = minutes.toString();
     secsLeft.innerHTML = seconds.toString();
-    if (t < 0) { 
-        clearInterval(x);
-        daysLeft.innerHTML = "00";
-        hoursLeft.innerHTML = "00";
-        minsLeft.innerHTML = "00";
-        secsLeft.innerHTML = "00";
-        document.getElementById('landed').innerHTML = "Landed";
+    if (deadline < now) { 
+        // clearInterval(x);
+        t = now - deadline; 
+        days = Math.floor(t / (1000 * 60 * 60 * 24)); 
+        hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
+        minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
+        seconds = Math.floor((t % (1000 * 60)) / 1000); 
+        daysLeft.innerHTML = days.toString();
+        hoursLeft.innerHTML = hours.toString();
+        minsLeft.innerHTML = minutes.toString();
+        secsLeft.innerHTML = seconds.toString();
+        document.getElementById('landed').innerHTML = "Time On Mars";
     } 
 }, 1000);
